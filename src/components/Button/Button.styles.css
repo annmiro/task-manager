@@ -1,0 +1,23 @@
+.button {
+    height: 31px;
+    border-radius: 10px;
+    border: none;
+    font-size: 20px;
+    font-weight: 800;
+    background-color: transparent; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 250px;
+    padding: 6px 14px;
+}
+
+.button.primary {
+ background-color: #44A0A0; 
+ color: #F6F6F6;
+}
+
+.button.text {
+ background-color: none;
+ color: #44A0A0;
+}
+

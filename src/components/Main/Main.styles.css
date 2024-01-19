@@ -1,0 +1,6 @@
+.main {
+    display: flex;
+    gap: 12px;
+    width: 912px;
+    min-height: 514px;
+}

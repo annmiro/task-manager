@@ -1,0 +1,30 @@
+.tag {
+    display: flex;
+    justify-content: center;
+    color: #FFF;
+    text-align: center;
+    font-size: 20px;
+    border-radius: 10px;
+    height: 30px;
+    min-width: 150px;
+}
+
+.tag.completed {
+    background-color: #4CAF50;
+}
+
+.tag.urgent {
+    background-color: #FF5252;
+}
+
+.tag.important {
+    background-color: #FFC107;
+}
+
+.tag.later {
+    background-color: #9C27B0;
+}
+
+.tag.study {
+    background-color: #26A7B8;
+}
