@@ -8,7 +8,7 @@ import ListItem from '../List/ListItem/ListItem';
 function Main() {
     return <main className="main">
         <Sidebar name="Categories">
-            <List gap={10}>
+            <List gap={10} direction="column">
                 <ListItem>
                     <Tag status='completed'>Completed</Tag >
                 </ListItem>

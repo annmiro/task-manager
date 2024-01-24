@@ -1,23 +1,41 @@
 .button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 31px;
     border-radius: 10px;
     border: none;
     font-size: 20px;
     font-weight: 800;
-    background-color: transparent; 
+    background-color: transparent;
     overflow: hidden;
     text-overflow: ellipsis;
     max-width: 250px;
-    padding: 6px 14px;
+    cursor: pointer;
 }
 
 .button.primary {
- background-color: #44A0A0; 
- color: #F6F6F6;
+    background-color: #44A0A0;
+    color: #F6F6F6;
+    padding: 6px 20px;
 }
 
 .button.text {
- background-color: none;
- color: #44A0A0;
+    background-color: transparent;
+    color: #44A0A0;
+    padding: 6px 0;
 }
 
+.button.text.current {
+    color: #ffffff;
+}
+
+.button.submit {
+    border: 2px solid #44A0A0;
+    background-color: #ffffff;
+    width: 182px;
+    height: 40px;
+    color: #44A0A0;
+    text-transform: uppercase;
+    padding: 10px;
+}

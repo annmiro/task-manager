@@ -4,10 +4,14 @@ import './Sidebar.styles.css';
 {/* <Component prop1="" prop2="">children</Component> */ }
 
 function Sidebar({ name, children }) {
-    return (<aside className="sidebar">
-        <h2 className='sidebar-title'>{name}</h2>
-        {children}
-    </aside>);
-}
+    return (
+        <aside className="sidebar">
+            <div className='sidebar-title-wrapper'>
+                <h2 className='sidebar-title'>{name}</h2>
+            </div>
+            {children}
+        </aside>
+    );
+};
 
 export default Sidebar;
