@@ -4,3 +4,7 @@
     gap: 15px;
     width: 650px;
 }
+
+.list-item-wrapper {
+    position: relative;
+}

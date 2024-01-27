@@ -4,7 +4,7 @@ import Info from "../Info/Info";
 import List from "../List/List";
 import Task from "../Task/Task";
 import ListItem from "../List/ListItem/ListItem";
-import Popup from "../Popup/Popup";
+import DropShadow from "../DropShadow/DropShadow";
 
 function MainContent() {
     return (<section className="main-content">
@@ -38,6 +38,7 @@ function MainContent() {
                 </ListItem>
             </List>
             <Filter />
+            <DropShadow />
         </div>
     </section>);
 }
