@@ -1,12 +1,17 @@
 .tag {
+    position: absolute;
+    right: 0;
+    top: 0;
     display: flex;
     justify-content: center;
+    align-items: center;
     color: #FFF;
     text-align: center;
-    font-size: 20px;
-    border-radius: 10px;
-    height: 30px;
-    flex-shrink: 0;
+    font-size: 11px;
+    width: 30px;
+    height: 100%;
+    transform: rotate(180deg);
+    writing-mode: vertical-lr;
 }
 
 .tag.completed {
@@ -29,10 +34,22 @@
     background-color: #26A7B8;
 }
 
-.tag.m {
-    width: 150px;
-}
+@media (min-width: 1000px) {
+    .tag {
+        flex-shrink: 0;
+        position: static;
+        font-size: 20px;
+        border-radius: 10px;
+        transform: none;
+        writing-mode: unset;
+    }
 
-.tag.l {
-    width: 200px;
+    .tag.m {
+        width: 150px;
+        height: 30px;
+    }
+
+    .tag.l {
+        width: 200px;
+    }
 }

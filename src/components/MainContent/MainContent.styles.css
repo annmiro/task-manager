@@ -1,10 +1,23 @@
 .main-content {
+    position: relative;
     display: flex;
     flex-direction: column;
+    width: 100%;
     gap: 15px;
-    width: 650px;
 }
 
 .list-item-wrapper {
-    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+
+}
+
+@media (min-width: 1000px) {
+    .main-content {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+    }
+
 }

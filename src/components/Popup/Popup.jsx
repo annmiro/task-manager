@@ -12,7 +12,7 @@ function Popup({ active, setActive }) {
         <section className='popup-content' onClick={e => e.stopPropagation()}>
             <form className='popup-form' >
                 <fieldset className='popup-form-fieldset'>
-                    <legend class="popup-form-legend visually-hidden">Основные вводные:</legend>
+                    <legend className="popup-form-legend visually-hidden">Основные вводные:</legend>
                     <label className='popup-form-title'>create task
                         <input className='popup-form-input' type="text" placeholder='Task description...' />
                     </label>

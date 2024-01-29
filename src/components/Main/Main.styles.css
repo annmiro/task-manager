@@ -1,6 +1,21 @@
 .main {
     display: flex;
     gap: 12px;
-    width: 912px;
-    min-height: 514px;
+    width: 100%;
+    padding: 0 10px;
+}
+
+@media (min-width: 375px) {
+    .main {
+        padding: 0 37px;
+    }
+}
+
+@media (min-width: 1000px) {
+    .main {
+        gap: 12px;
+        width: 912px;
+        min-height: 514px;
+    }
+
 }
