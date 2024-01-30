@@ -12,8 +12,8 @@ const tagName = {
 }
 
 
-function Tag({ status = '' }) {
-    return <span className={`tag ${status}`}>{tagName[status]}</span>;
+function Tag({ status = '', size = 'm' }) {
+    return <span className={`tag ${status} ${size}`}>{tagName[status]}</span>;
 }
 
 export default Tag;

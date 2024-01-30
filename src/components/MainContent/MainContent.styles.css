@@ -4,3 +4,8 @@
     gap: 15px;
     width: 650px;
 }
+
+.list-item-wrapper {
+    border-radius: 10px;
+    overflow: hidden;
+}

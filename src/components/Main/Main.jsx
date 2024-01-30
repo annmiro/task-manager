@@ -4,26 +4,19 @@ import Sidebar from "../Sidebar/Sidebar";
 import Tag from '../Tag/Tag';
 import List from '../List/List';
 import ListItem from '../List/ListItem/ListItem';
+import Button from '../Button/Button';
+
+export const categories = ['completed', 'urgent', 'important', 'later', 'study'];
 
 function Main() {
     return <main className="main">
         <Sidebar name="Categories">
-            <List gap={10}>
-                <ListItem>
-                    <Tag status='completed'>Completed</Tag >
-                </ListItem>
-                <ListItem>
-                    <Tag status='urgent'>Urgent</Tag >
-                </ListItem>
-                <ListItem>
-                    <Tag status='important'>Important</Tag >
-                </ListItem>
-                <ListItem>
-                    <Tag status='later'>Later</Tag>
-                </ListItem>
-                <ListItem>
-                    <Tag status='study'>To study</Tag>
-                </ListItem>
+            <List gap={10} direction="column">
+                {categories.map(category => (
+                    <ListItem>
+                        <Tag status={category} size='l'></Tag>
+                    </ListItem>
+                ))}
             </List>
         </Sidebar>
         <MainContent />

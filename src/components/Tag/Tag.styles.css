@@ -6,7 +6,7 @@
     font-size: 20px;
     border-radius: 10px;
     height: 30px;
-    min-width: 150px;
+    flex-shrink: 0;
 }
 
 .tag.completed {
@@ -27,4 +27,12 @@
 
 .tag.study {
     background-color: #26A7B8;
+}
+
+.tag.m {
+    width: 150px;
+}
+
+.tag.l {
+    width: 200px;
 }

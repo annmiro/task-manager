@@ -1,13 +1,10 @@
 .sidebar {
+    display: flex;
+    position: relative;
+    flex-direction: column;
     width: 250px;
     border-radius: 10px;
     background-color: #354259;
     padding: 25px 25px 20px;
-}
-
-.sidebar-title {
-    text-align: center;
-    margin: 0 0 46px;
-    font-size: 20px;
-    font-weight: 600;
+    gap: 46px;
 }

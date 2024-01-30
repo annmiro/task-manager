@@ -4,13 +4,13 @@ import Info from "../Info/Info";
 import List from "../List/List";
 import Task from "../Task/Task";
 import ListItem from "../List/ListItem/ListItem";
+import DropShadow from "../DropShadow/DropShadow";
 
 function MainContent() {
     return (<section className="main-content">
         <Info />
-
         <div className="list-item-wrapper">
-            <List>
+            <List direction="column">
                 <ListItem>
                     <Task checked={true}
                         description='Memorize the fifty states and their capitals'
@@ -38,6 +38,7 @@ function MainContent() {
                 </ListItem>
             </List>
             <Filter />
+            <DropShadow />
         </div>
     </section>);
 }
