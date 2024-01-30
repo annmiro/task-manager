@@ -10,15 +10,3 @@
     border-radius: 0px 0px 10px 10px;
     background-color: #44A0A0;
 }
-
-/* .drop-shadow::before {
-    content: "";
-    z-index: -1;
-    bottom: -4px;
-    left: 0;
-    position: absolute;
-    width: 100%;
-    height: 20px;
-    border-radius: 0px 0px 10px 10px;
-    background-color: #44A0A0;
-  } */

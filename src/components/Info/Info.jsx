@@ -9,7 +9,6 @@ function Info() {
     const [popupActive, setPopupActive] = useState(false);
     
     function openPopup() {
-        console.log('click');
         setPopupActive(true);
     };
 

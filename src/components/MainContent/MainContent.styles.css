@@ -6,5 +6,6 @@
 }
 
 .list-item-wrapper {
-    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
 }
