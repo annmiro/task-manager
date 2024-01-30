@@ -21,6 +21,10 @@
     padding: 6px 20px;
 }
 
+.button.ghost {
+    padding: 0;
+}
+
 .button.text {
     background-color: transparent;
     color: #44A0A0;

@@ -13,7 +13,6 @@
 
 @media (min-width: 1000px) {
     .main {
-        gap: 12px;
         width: 912px;
         min-height: 514px;
     }

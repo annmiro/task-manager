@@ -9,7 +9,6 @@
 
 @media (min-width: 1000px) {
     .info {
-        display: flex;
         flex-direction: row;
         position: relative;
         gap: 20px;

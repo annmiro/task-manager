@@ -9,15 +9,4 @@
 .list-item-wrapper {
     border-radius: 10px;
     overflow: hidden;
-
-}
-
-@media (min-width: 1000px) {
-    .main-content {
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-        width: 100%;
-    }
-
 }
