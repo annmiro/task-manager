@@ -23,6 +23,7 @@
 
 .button.ghost {
     padding: 0;
+    font-weight: unset;
 }
 
 .button.text {

@@ -16,7 +16,7 @@
     .task {
         font-size: 20px;
         padding: 24px 20px 26px;
-        height: 80px;
+        min-height: 80px;
     }
 
 }
