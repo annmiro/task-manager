@@ -1,12 +1,12 @@
 import Checkbox from '../Checkbox/Checkbox';
-import Tag from '../Tag/Tag';
+import TaskTag from '../TaskTag/TaskTag';
 import './Task.styles.css';
 
 function Task({ checked, description, categoryName }) {
     return (
         <article className="task">
             <Checkbox checked={checked} description={description}/>
-            <Tag status={categoryName}/>
+            <TaskTag status={categoryName}/>
         </article>);
 };
 
