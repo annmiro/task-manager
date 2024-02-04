@@ -1,7 +1,6 @@
 .drop-shadow {
     z-index: -1;
     display: block;
-    width: 100%;
     bottom: -4px;
     left: 0;
     position: absolute;

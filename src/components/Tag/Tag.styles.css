@@ -1,12 +1,12 @@
 .tag {
     display: flex;
     justify-content: center;
+    align-items: center;
     color: #FFF;
     text-align: center;
+    flex-shrink: 0;
     font-size: 20px;
     border-radius: 10px;
-    height: 30px;
-    flex-shrink: 0;
 }
 
 .tag.completed {
@@ -31,6 +31,7 @@
 
 .tag.m {
     width: 150px;
+    height: 30px;
 }
 
 .tag.l {

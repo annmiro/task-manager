@@ -14,7 +14,9 @@ function Main() {
             <List gap={10} direction="column">
                 {categories.map(category => (
                     <ListItem>
-                        <Tag status={category} size='l'></Tag>
+                        <Button variant='ghost'>
+                            <Tag status={category} size='l'></Tag>
+                        </Button>
                     </ListItem>
                 ))}
             </List>
