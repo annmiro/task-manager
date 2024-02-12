@@ -5,11 +5,16 @@ import Button from '../Button/Button';
 import InfoTitle from '../InfoTitle/InfoTitle';
 import DropShadow from '../DropShadow/DropShadow';
 
-function Info() {
+function Info({setTasks}) {
     const [popupActive, setPopupActive] = useState(false);
     
     function openPopup() {
         setPopupActive(true);
+    };
+
+    function closePopup(task) {
+        setPopupActive(false);
+        setTasks(task)
     };
 
     return (
@@ -20,7 +25,7 @@ function Info() {
                 <Button variant='text'>Clear completed</Button>
                 <DropShadow/>
             </div>
-            <Popup active={popupActive} setActive={setPopupActive} />
+            <Popup active={popupActive} setActive={setPopupActive} closePopup={closePopup} />
         </>);
 };
 
