@@ -72,8 +72,7 @@
 
 }
 
-/* @media (min-width: 1000px) {
-    .popup-content {
-        width: 500px;
-    }
-} */
+.input-radio:checked + .tag-wrapper {
+    outline: 3px solid white;
+    border-radius: 10px;
+}

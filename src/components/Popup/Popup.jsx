@@ -39,8 +39,10 @@ function Popup({ active, setActive, closePopup }) {
                                 {categories.map((category, index) => (
                                     <ListItem key={index}>
                                         <label>
-                                            <input className='visually-hidden' type="radio" name='category' value={category} onChange={handleChange} />
-                                            <Tag status={category} size="l" />
+                                            <input className='visually-hidden input-radio' type="radio" name='category' value={category} onChange={handleChange} />
+                                            <div className='tag-wrapper'>
+                                                <Tag status={category} size="l" />
+                                            </div>
                                         </label>
                                     </ListItem>
                                 ))}
