@@ -32,14 +32,14 @@ function Popup({ active, setActive, closePopup }) {
                         <fieldset className='popup-form-fieldset'>
                             <legend className="popup-form-legend visually-hidden">Основные вводные:</legend>
                             <label className='popup-form-title'>create task
-                                <input className='popup-form-input' type="text" name='description' placeholder='Task description...' onChange={handleChange} />
+                                <input className='popup-form-input' type="text" name='description' placeholder='Task description...' onChange={handleChange} required />
                             </label>
                             <CategoriesTitle fluid={true} />
                             <List gap={20} >
                                 {categories.map((category, index) => (
                                     <ListItem key={index}>
                                         <label>
-                                            <input className='visually-hidden input-radio' type="radio" name='category' value={category} onChange={handleChange} />
+                                            <input className='visually-hidden input-radio' type="radio" name='category' value={category} onChange={handleChange} required />
                                             <div className='tag-wrapper'>
                                                 <Tag status={category} size="l" />
                                             </div>
