@@ -5,10 +5,21 @@ import Tag from '../Tag/Tag';
 import List from '../List/List';
 import ListItem from '../List/ListItem/ListItem';
 import Button from '../Button/Button';
-
-export const categories = ['completed', 'urgent', 'important', 'later', 'study'];
+import { useState } from 'react';
+import { initialTasks, categories } from './Main.data';
 
 function Main() {
+    const [tasks, setTasks] = useState(initialTasks);
+
+    const addTask = (newTask) => {
+        setTasks([
+            ...tasks, {
+                ...newTask,
+                isCompleted: false,
+                id: 3,
+            }])
+    }
+
     return <main className="main">
         <Sidebar name="Categories">
             <List gap={10} direction="column">
@@ -21,7 +32,7 @@ function Main() {
                 ))}
             </List>
         </Sidebar>
-        <MainContent />
+        <MainContent tasks={tasks} setTasks={addTask} />
     </main>
 }
 

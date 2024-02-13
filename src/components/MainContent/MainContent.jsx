@@ -6,36 +6,19 @@ import Task from "../Task/Task";
 import ListItem from "../List/ListItem/ListItem";
 import DropShadow from "../DropShadow/DropShadow";
 
-function MainContent() {
+function MainContent({ tasks, setTasks }) {
     return (<section className="main-content">
-        <Info />
+        <Info setTasks={setTasks} />
         <div className="list-item-wrapper">
             <List direction="column">
-                <ListItem>
-                    <Task checked={true}
-                        description='Memorize the fifty states and their capitals'
-                        categoryName='completed' />
-                </ListItem>
-                <ListItem>
-                    <Task checked={true}
-                        description='Memorize the fifty states and their capitals'
-                        categoryName='urgent' />
-                </ListItem>
-                <ListItem>
-                    <Task checked={true}
-                        description='Memorize the fifty states and their capitals'
-                        categoryName='important' />
-                </ListItem>
-                <ListItem>
-                    <Task checked={true}
-                        description='Memorize the fifty states and their capitals'
-                        categoryName='later' />
-                </ListItem>
-                <ListItem>
-                    <Task checked={true}
-                        description='Memorize the fifty states and their capitals'
-                        categoryName='study' />
-                </ListItem>
+                {tasks.map(task => (
+                    <ListItem>
+                        <Task checked={task.isCompleted}
+                            description={task.description}
+                            categoryName={task.category} />
+                    </ListItem>
+                )
+                )}
             </List>
             <Filter />
             <DropShadow />
