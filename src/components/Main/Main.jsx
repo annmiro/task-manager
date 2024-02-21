@@ -16,15 +16,16 @@ function Main() {
             ...tasks, {
                 ...newTask,
                 isCompleted: false,
-                id: 3,
+                id: Math.max(...tasks.map((task) => task.id)) + 1,
             }])
     }
+console.log(tasks)
 
     return <main className="main">
         <Sidebar name="Categories">
             <List gap={10} direction="column">
                 {categories.map(category => (
-                    <ListItem>
+                    <ListItem key={category}>
                         <Button variant='ghost'>
                             <Tag status={category} size='l'></Tag>
                         </Button>
@@ -32,7 +33,7 @@ function Main() {
                 ))}
             </List>
         </Sidebar>
-        <MainContent tasks={tasks} setTasks={addTask} />
+        <MainContent tasks={tasks} addTasks={addTask} editTask={setTasks} />
     </main>
 }
 
