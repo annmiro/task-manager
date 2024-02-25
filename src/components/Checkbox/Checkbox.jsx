@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./Checkbox.styles.css";
 
-function Checkbox({ checked, description, changeTaskDescription }) {
+function Checkbox({ checked, description, changeTaskDescription, toggleTaskStatus }) {
     const [isEditableMode, setIsEditableMode] = useState(false);
     const [localDescription, setEditDescription] = useState(description);
 
@@ -29,7 +29,7 @@ function Checkbox({ checked, description, changeTaskDescription }) {
 
             ) : (
                 <label className="checkbox-label">
-                    <input className="checkbox" type="checkbox" defaultChecked={checked} />
+                    <input className="checkbox" type="checkbox" checked={checked} onChange={(e) => toggleTaskStatus(e.target.checked)} />
                     <span className="checkbox-value" onClick={() => setIsEditableMode(true)}>{description}</span>
                 </label>
             )}

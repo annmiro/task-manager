@@ -8,12 +8,17 @@ import DropShadow from "../DropShadow/DropShadow";
 
 function MainContent({ tasks, addTasks, editTask }) {
     const changeTaskDescription = (id, description) => {
-        const result = tasks.map((task) => task.id === id ? {...task, description: description} : task)
-        editTask(result)
+        const result = tasks.map(task => task.id === id ? { ...task, description: description } : task);
+        editTask(result);
+    }
+
+    const toggleTaskStatus = (id, value) => {
+        const result = tasks.map(task => task.id === id ? { ...task, isCompleted: value } : task);
+        editTask(result);
     }
 
     return (<section className="main-content">
-        <Info setTasks={addTasks} />
+        <Info addTasks={addTasks} clearTasks={() => editTask(tasks.filter(t => !t.isCompleted))} />
         <div className="list-item-wrapper">
             <List direction="column">
                 {tasks.map(task => (
@@ -21,7 +26,8 @@ function MainContent({ tasks, addTasks, editTask }) {
                         <Task checked={task.isCompleted}
                             description={task.description}
                             categoryName={task.category}
-                            changeTaskDescription={(value) => changeTaskDescription(task.id, value)} />
+                            changeTaskDescription={(value) => changeTaskDescription(task.id, value)}
+                            toggleTaskStatus={(value) => toggleTaskStatus(task.id, value)} />
                     </ListItem>
                 )
                 )}
