@@ -1,12 +1,16 @@
 .main-content {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    gap: 15px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 15px;
 }
 
 .list-item-wrapper {
-    border-radius: 10px;
-    overflow: hidden;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: #354259;
 }

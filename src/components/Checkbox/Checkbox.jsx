@@ -19,11 +19,12 @@ function Checkbox({ checked, description, changeTaskDescription, toggleTaskStatu
     return (
         <>
             {isEditableMode ? (
-                <form onSubmit={onSubmit}>
-                    <input type="text" name='description' value={localDescription} onChange={(evt) => setEditDescription(evt.target.value)} />
-                    <div>
-                        <button type="submit">save</button>
-                        <button type="button" onClick={onCancelClick}>cancel</button>
+                <form className="task-form" onSubmit={onSubmit}>
+                    <textarea className="task-form-field" type="text" name='description' onChange={(evt) => setEditDescription(evt.target.value)} >{localDescription}</textarea>
+
+                    <div className="task-form-buttons-wrapper">
+                        <button className="button primary" type="submit">save</button>
+                        <button className="button text" type="button" onClick={onCancelClick}>cancel</button>
                     </div>
                 </form>
 

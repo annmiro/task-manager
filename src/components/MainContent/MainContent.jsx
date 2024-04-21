@@ -20,7 +20,7 @@ function MainContent({ tasks, addTasks, editTask }) {
     return (<section className="main-content">
         <Info addTasks={addTasks} clearTasks={() => editTask(tasks.filter(t => !t.isCompleted))} />
         <div className="list-item-wrapper">
-            <List direction="column">
+            <List direction="column" fluid justify="flex-start">
                 {tasks.map(task => (
                     <ListItem key={task.id}>
                         <Task checked={task.isCompleted}
