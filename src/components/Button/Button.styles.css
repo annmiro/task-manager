@@ -1,47 +1,47 @@
 .button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 31px;
-    border-radius: 10px;
-    border: none;
-    font-family: inherit;
-    font-size: 20px;
-    font-weight: 800;
-    background-color: transparent;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: 250px;
-    cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 31px;
+  border-radius: 10px;
+  border: none;
+  font-family: inherit;
+  font-size: 20px;
+  font-weight: 800;
+  background-color: transparent;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
+  cursor: pointer;
 }
 
 .button.primary {
-    background-color: #44A0A0;
-    color: #F6F6F6;
-    padding: 6px 20px;
+  background-color: #44a0a0;
+  color: #f6f6f6;
+  padding: 6px 20px;
 }
 
 .button.ghost {
-    padding: 0;
-    font-weight: unset;
+  padding: 0;
+  font-weight: unset;
 }
 
 .button.text {
-    background-color: transparent;
-    color: #44A0A0;
-    padding: 6px 0;
+  background-color: transparent;
+  color: #44a0a0;
+  padding: 6px 0;
 }
 
 .button.text.current {
-    color: #ffffff;
+  color: #ffffff;
 }
 
 .button.submit {
-    border: 2px solid #44A0A0;
-    background-color: #ffffff;
-    width: 182px;
-    height: 40px;
-    color: #44A0A0;
-    text-transform: uppercase;
-    padding: 10px;
+  border: 2px solid #44a0a0;
+  background-color: #ffffff;
+  width: 182px;
+  height: 40px;
+  color: #44a0a0;
+  text-transform: uppercase;
+  padding: 10px;
 }
