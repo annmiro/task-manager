@@ -2,7 +2,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 31px;
   border-radius: 10px;
   border: none;
   font-family: inherit;
@@ -40,8 +39,15 @@
   border: 2px solid #44a0a0;
   background-color: #ffffff;
   width: 182px;
-  height: 40px;
   color: #44a0a0;
   text-transform: uppercase;
   padding: 10px;
+}
+
+.button.medium {
+  height: 31px;
+}
+
+.button.large {
+  height: 40px;
 }
