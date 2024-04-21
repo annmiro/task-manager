@@ -1,0 +1,24 @@
+.task-form-field {
+  resize: vertical;
+  width: 444px;
+  font-size: 20px;
+  font-family: inherit;
+  background-color: transparent;
+  border: 1px dotted #fff;
+  color: inherit;
+  border-radius: 10px;
+  padding: 5px 10px;
+  margin-bottom: 10px;
+}
+
+.task-form-buttons-wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.task-form-buttons-wrapper .button,
+.task-form-buttons-wrapper .button {
+  width: 100%;
+}

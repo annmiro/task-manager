@@ -1,10 +1,10 @@
 import './Button.styles.css';
 
 
-function Button({ variant, onClick, children }) {
+function Button({ variant, onClick, children, size = 'medium' }) {
     return <button
         type={variant === 'submit' ? 'submit' : 'button'}
-        className={`button ${variant}`}
+        className={`button ${variant} ${size}`}
         onClick={onClick}>
         {children}
     </button>

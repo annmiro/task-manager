@@ -1,40 +1,12 @@
-import { useState } from "react";
 import "./Checkbox.styles.css";
 
-function Checkbox({ checked, description, changeTaskDescription, toggleTaskStatus }) {
-    const [isEditableMode, setIsEditableMode] = useState(false);
-    const [localDescription, setEditDescription] = useState(description);
-
-    const onCancelClick = () => {
-        setIsEditableMode(false);
-        setEditDescription(description);
-    }
-
-    const onSubmit = (event) => {
-        event.preventDefault();
-        changeTaskDescription(localDescription)
-        setIsEditableMode(false);
-    }
-
+function Checkbox({ checked, description, editTaskDescription, toggleTaskStatus }) {
     return (
-        <>
-            {isEditableMode ? (
-                <form className="task-form" onSubmit={onSubmit}>
-                    <textarea className="task-form-field" type="text" name='description' onChange={(evt) => setEditDescription(evt.target.value)} >{localDescription}</textarea>
-
-                    <div className="task-form-buttons-wrapper">
-                        <button className="button primary" type="submit">save</button>
-                        <button className="button text" type="button" onClick={onCancelClick}>cancel</button>
-                    </div>
-                </form>
-
-            ) : (
-                <label className="checkbox-label">
-                    <input className="checkbox" type="checkbox" checked={checked} onChange={(e) => toggleTaskStatus(e.target.checked)} />
-                    <span className="checkbox-value" onClick={() => setIsEditableMode(true)}>{description}</span>
-                </label>
-            )}
-        </>);
-};
+        <div className="checkbox-label">
+            <input className="checkbox" type="checkbox" checked={checked} onChange={(e) => toggleTaskStatus(e.target.checked)} />
+            <span className="checkbox-value" onClick={editTaskDescription}>{description}</span>
+        </div>
+    )
+}
 
 export default Checkbox;
