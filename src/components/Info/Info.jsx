@@ -5,9 +5,9 @@ import Button from '../Button/Button';
 import InfoTitle from '../InfoTitle/InfoTitle';
 import DropShadow from '../DropShadow/DropShadow';
 
-function Info({addTasks, clearTasks}) {
+function Info({ addTasks, clearTasks, taskCount }) {
     const [popupActive, setPopupActive] = useState(false);
-    
+
     function openPopup() {
         setPopupActive(true);
     };
@@ -20,10 +20,10 @@ function Info({addTasks, clearTasks}) {
     return (
         <>
             <div className="info">
-                <InfoTitle quantity={5} />
-                <Button variant='primary' onClick={openPopup} >Add new task</Button>
+                <InfoTitle quantity={taskCount} />
+                <Button variant='primary' onClick={openPopup}>Add new task</Button>
                 <Button variant='text' onClick={clearTasks}>Clear completed</Button>
-                <DropShadow/>
+                <DropShadow />
             </div>
             <Popup active={popupActive} setActive={setPopupActive} closePopup={closePopup} />
         </>);
