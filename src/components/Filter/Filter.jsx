@@ -7,15 +7,16 @@ function Filter({ filterButtons, setFilterButtons }) {
 
     const updateQueryParams = (newParams) => {
         const updatedParams = new URLSearchParams(queryParams);
+
         for (const [key, value] of Object.entries(newParams)) {
             updatedParams.set(key, value);
         }
+
         setQueryParams(updatedParams);
         window.history.replaceState(null, null, `?${updatedParams.toString()}`);
     };
 
     const setFilter = (status) => {
-        console.log(status)
         updateQueryParams({ status });
         setFilterButtons(filterButtons.map(button => ({ ...button, isCurrent: button.name.toLocaleLowerCase() === status })))
     };

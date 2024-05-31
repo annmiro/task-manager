@@ -1,4 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap");
+
+:root {
+  --beige-100: #f7ecde;
+  --beige-500: #e9c597;
+  --blue-500: #354259;
+  --blue-900: hsl(219, 36%, 17%);
+  --white-100: #ffffff;
+  --white-200: #f6f6f6;
+  --turquoise-200: #54bab9;
+  --turquoise-400: #44a0a0;
+  --turquoise-600: #26a7b8;
+  --turquoise-800: #38938a;
+  --turquoise-900: #1d8a8a;
+  --green: #4caf50;
+  --grey: #858585;
+  --red: #ff5252;
+  --yellow: #ffc107;
+  --purple: #9c27b0;
+}
 
 * {
   box-sizing: border-box;
@@ -8,8 +27,8 @@ body {
   font-family: Open Sans, Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #1C273C;
-  color: #ffffff;
+  background-color: var(--bg-color);
+  color: var(--white-100);
   margin: 0;
   padding-bottom: 258px;
 }

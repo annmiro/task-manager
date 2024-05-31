@@ -22,7 +22,9 @@ function Info({ addTasks, clearTasks, taskCount }) {
             <div className="info">
                 <InfoTitle quantity={taskCount} />
                 <Button variant='primary' onClick={openPopup}>Add new task</Button>
-                <Button variant='text' onClick={clearTasks}>Clear completed</Button>
+                <Button variant='ghost' onClick={clearTasks}>
+                    <span className='clear-task-button'>Clear completed</span>
+                </Button>
                 <DropShadow />
             </div>
             <Popup active={popupActive} setActive={setPopupActive} closePopup={closePopup} />

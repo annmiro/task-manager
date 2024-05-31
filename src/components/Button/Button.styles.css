@@ -15,8 +15,8 @@
 }
 
 .button.primary {
-  background-color: #44a0a0;
-  color: #f6f6f6;
+  background-color: var(--bg-button);
+  color: var(--white-200);
   padding: 6px 20px;
 }
 
@@ -27,19 +27,19 @@
 
 .button.text {
   background-color: transparent;
-  color: #44a0a0;
+  color: var(--turquoise-400);
   padding: 6px 0;
 }
 
 .button.text.current {
-  color: #ffffff;
+  color: var(--white-100);
 }
 
 .button.submit {
-  border: 2px solid #44a0a0;
-  background-color: #ffffff;
+  border: 2px solid var(--turquoise-400);
+  background-color: var(--white);
   width: 182px;
-  color: #44a0a0;
+  color: var(--turquoise-400);
   text-transform: uppercase;
   padding: 10px;
 }

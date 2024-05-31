@@ -12,5 +12,5 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-  background-color: #354259;
+  background-color: var(--bg-interface);
 }
