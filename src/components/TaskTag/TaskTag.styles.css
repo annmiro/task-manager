@@ -1,0 +1,22 @@
+@media (max-width: 1000px) {
+  .task-tag {
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    color: var(--white-100);
+    text-align: center;
+    transform: rotate(180deg);
+    writing-mode: vertical-lr;
+  }
+
+  .task-tag .tag {
+    width: 30px;
+    font-size: 11px;
+    border-radius: unset;
+    height: 100%;
+  }
+}

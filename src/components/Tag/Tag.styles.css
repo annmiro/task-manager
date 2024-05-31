@@ -1,0 +1,40 @@
+.tag {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--white-100);
+  text-align: center;
+  flex-shrink: 0;
+  font-size: 20px;
+  border-radius: 10px;
+}
+
+.tag.completed {
+  background-color: var(--green);
+}
+
+.tag.urgent {
+  background-color: var(--red);
+}
+
+.tag.important {
+  background-color: var(--yellow);
+}
+
+.tag.later {
+  background-color: var(--purple);
+}
+
+.tag.study {
+  background-color: var(--turquoise-600);
+}
+
+.tag.m {
+  width: 150px;
+  height: 30px;
+}
+
+.tag.l {
+  width: 200px;
+  height: 30px;
+}

@@ -1,0 +1,20 @@
+.task {
+  position: relative;
+  display: flex;
+  min-height: 70px;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  padding: 13px 40px 13px 10px;
+  border-bottom: 1px solid var(--white-200);
+  background-color: var(--bg-interface);
+  font-size: 16px;
+}
+
+@media (min-width: 1000px) {
+  .task {
+    font-size: 20px;
+    padding: 24px 20px 26px;
+    min-height: 80px;
+  }
+}
