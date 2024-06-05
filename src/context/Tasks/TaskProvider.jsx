@@ -3,11 +3,16 @@ import { TaskContext } from "./TaskContext";
 import { initialTasks } from "../../components/Main/Main.data";
 
 export default function TaskProvider({ children }) {
-    const [tasks, setTasks] = useState(initialTasks);
+    const [tasks, setTasks] = useState(JSON.parse(localStorage.getItem('tasks')) || initialTasks);
     const [queryParams, setQueryParams] = useState(new URLSearchParams(window.location.search));
 
+    const saveTasks = (newTasks) => {
+        setTasks(newTasks);
+        localStorage.setItem('tasks', JSON.stringify(newTasks));
+    }
+
     const addTask = (newTask) => {
-        setTasks([
+        saveTasks([
             ...tasks, {
                 ...newTask,
                 isCompleted: false,
@@ -15,11 +20,11 @@ export default function TaskProvider({ children }) {
             }])
     }
 
-    const clearCompletedTasks = () => setTasks(tasks.filter(task => !task.isCompleted))
+    const clearCompletedTasks = () => saveTasks(tasks.filter(task => !task.isCompleted))
 
-    const changeTaskDescription = (id, description) => setTasks(tasks.map(task => task.id === id ? { ...task, description: description } : task));
+    const changeTaskDescription = (id, description) => saveTasks(tasks.map(task => task.id === id ? { ...task, description: description } : task));
 
-    const toggleTaskStatus = (id, value) => setTasks(tasks.map(task => task.id === id ? { ...task, isCompleted: value } : task));
+    const toggleTaskStatus = (id, value) => saveTasks(tasks.map(task => task.id === id ? { ...task, isCompleted: value } : task));
 
     const updateQueryParams = (newParams) => {
         const updatedParams = new URLSearchParams(queryParams);
@@ -37,7 +42,7 @@ export default function TaskProvider({ children }) {
             value={{
                 tasks,
                 addTask,
-                editTasks: setTasks,
+                editTasks: saveTasks,
                 clearCompletedTasks,
                 changeTaskDescription,
                 toggleTaskStatus,
