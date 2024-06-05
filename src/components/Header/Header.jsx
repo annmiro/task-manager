@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { ThemeContext } from "../../utils/Theme";
+import { ThemeContext } from "../../context/Theme/ThemeContext";
 import MoonIcon from "./moon.svg?react";
 import SunIcon from "./sun.svg?react";
 import './Header.styles.css';

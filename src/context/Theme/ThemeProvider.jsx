@@ -1,17 +1,12 @@
 import React, { useState, useLayoutEffect } from "react";
-
-export const ThemeContext = React.createContext({
-    dark: false,
-    toggle: () => { }
-});
+import { ThemeTokens } from "../../utils/ThemeTokens";
+import { ThemeContext } from "./ThemeContext";
 
 export default function ThemeProvider({ children }) {
     // keeps state of the current theme
     const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
     const isLocalThemeDark = localStorage.getItem('dark');
     const [dark, setDark] = useState(isLocalThemeDark !== null ? JSON.parse(isLocalThemeDark) : prefersDark);
-
-    console.log(isLocalThemeDark, dark, typeof dark)
 
     // paints the app before it renders elements
     useLayoutEffect(() => {
@@ -21,14 +16,14 @@ export default function ThemeProvider({ children }) {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [dark]);
 
-    // rewrites set of css variablels/colors
+    // rewrites set of css variables/colors
     const applyTheme = () => {
         let theme;
         if (dark) {
-            theme = darkTheme;
+            theme = ThemeTokens.dark;
         }
         if (!dark) {
-            theme = lightTheme;
+            theme = ThemeTokens.light;
         }
 
         const root = document.getElementsByTagName("html")[0];
@@ -55,20 +50,3 @@ export default function ThemeProvider({ children }) {
         </ThemeContext.Provider>
     );
 }
-
-// styles
-const lightTheme = [
-    "--bg-color: var(--beige-100)",
-    "--bg-interface: var(--turquoise-200)",
-    "--bg-button: var(--turquoise-800)",
-    "--text-color: var(--turquoise-900)",
-    "--bg-shadow: var(--turquoise-800)",
-];
-
-const darkTheme = [
-    "--bg-color: var(--blue-900)",
-    "--bg-interface: var(--blue-500)",
-    "--bg-button: var(--turquoise-400)",
-    "--text-color: var(--turquoise-400)",
-    "--bg-shadow: var(--turquoise-400)",
-];

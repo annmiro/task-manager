@@ -1,20 +1,10 @@
-import { useState } from "react";
-import "./Filter.styles.css";
 import Button from "../Button/Button";
+import { useContext } from "react";
+import { TaskContext } from "../../context/Tasks/TaskContext";
+import "./Filter.styles.css";
 
 function Filter({ filterButtons, setFilterButtons }) {
-    const [queryParams, setQueryParams] = useState(new URLSearchParams(window.location.search));
-
-    const updateQueryParams = (newParams) => {
-        const updatedParams = new URLSearchParams(queryParams);
-
-        for (const [key, value] of Object.entries(newParams)) {
-            updatedParams.set(key, value);
-        }
-
-        setQueryParams(updatedParams);
-        window.history.replaceState(null, null, `?${updatedParams.toString()}`);
-    };
+    const { updateQueryParams } = useContext(TaskContext);
 
     const setFilter = (status) => {
         updateQueryParams({ status });
