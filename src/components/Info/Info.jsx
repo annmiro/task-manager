@@ -1,12 +1,14 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import './Info.styles.css';
 import Popup from '../Popup/Popup';
 import Button from '../Button/Button';
 import InfoTitle from '../InfoTitle/InfoTitle';
 import DropShadow from '../DropShadow/DropShadow';
+import { TaskContext } from "../../context/Tasks/TaskContext";
 
-function Info({ addTasks, clearTasks, taskCount }) {
+function Info({ taskCount }) {
     const [popupActive, setPopupActive] = useState(false);
+    const { addTask, clearCompletedTasks } = useContext(TaskContext);
 
     function openPopup() {
         setPopupActive(true);
@@ -14,7 +16,7 @@ function Info({ addTasks, clearTasks, taskCount }) {
 
     function closePopup(task) {
         setPopupActive(false);
-        addTasks(task)
+        addTask(task);
     };
 
     return (
@@ -22,7 +24,7 @@ function Info({ addTasks, clearTasks, taskCount }) {
             <div className="info">
                 <InfoTitle quantity={taskCount} />
                 <Button variant='primary' onClick={openPopup}>Add new task</Button>
-                <Button variant='ghost' onClick={clearTasks}>
+                <Button variant='ghost' onClick={clearCompletedTasks}>
                     <span className='clear-task-button'>Clear completed</span>
                 </Button>
                 <DropShadow />

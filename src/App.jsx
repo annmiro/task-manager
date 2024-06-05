@@ -1,17 +1,16 @@
 import './App.css';
 import Header from './components/Header/Header';
 import Main from './components/Main/Main';
-import ThemeProvider from "./context/Theme/ThemeProvider";
+import MainProvider from "./context/MainProvider";
 
 function App() {
-
   return (
-    <ThemeProvider>
+    <MainProvider>
       <div className="app">
         <Header />
         <Main />
       </div>
-    </ThemeProvider>
+    </MainProvider>
   );
 }
 

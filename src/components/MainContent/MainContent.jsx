@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import "./MainContent.styles.css";
 import Filter from "../Filter/Filter";
 import Info from "../Info/Info";
@@ -6,6 +6,7 @@ import List from "../List/List";
 import Task from "../Task/Task";
 import ListItem from "../List/ListItem/ListItem";
 import DropShadow from "../DropShadow/DropShadow";
+import { TaskContext } from "../../context/Tasks/TaskContext";
 
 const buttonList = [
     {
@@ -22,33 +23,31 @@ const buttonList = [
     },
 ];
 
-function MainContent({ tasks, addTasks, editTask }) {
+function MainContent() {
+    const { tasks, changeTaskDescription, toggleTaskStatus } = useContext(TaskContext);
+
     const query = new URLSearchParams(window.location.search);
-    const token = query.get('status');
+    const queryStatus = query.get('status');
+    const queryCategory = query.get('category');
 
-    const [filterButtons, setFilterButtons] = useState(token && token !== `all` ?
-        buttonList.map(button => ({ ...button, isCurrent: button.name.toLocaleLowerCase() === token })) : buttonList);
-
-    const changeTaskDescription = (id, description) => {
-        const result = tasks.map(task => task.id === id ? { ...task, description: description } : task);
-        editTask(result);
-    }
-
-    const toggleTaskStatus = (id, value) => {
-        const result = tasks.map(task => task.id === id ? { ...task, isCompleted: value } : task);
-        editTask(result);
-    }
+    const [filterButtons, setFilterButtons] = useState(queryStatus && queryStatus !== `all` ?
+        buttonList.map(button => ({ ...button, isCurrent: button.name.toLocaleLowerCase() === queryStatus })) : buttonList);
 
     let filteredTasks = tasks;
 
-    if (token && token !== `all`) {
+    if (queryStatus && queryStatus !== `all`) {
         filteredTasks = filteredTasks.filter(task => {
-            return token === `completed` && task.isCompleted === true || token === `active` && task.isCompleted === false
+            return queryStatus === `completed` && task.isCompleted === true || queryStatus === `active` && task.isCompleted === false
         })
     }
 
+    if (queryCategory) {
+        filteredTasks = filteredTasks.filter(task => task.category === queryCategory)
+    }
+
     return (<section className="main-content">
-        <Info taskCount={filteredTasks.length} addTasks={addTasks} clearTasks={() => editTask(tasks.filter(t => !t.isCompleted))} />
+        <Info taskCount={filteredTasks.length} />
+
         <div className="list-item-wrapper">
             <List direction="column" fluid justify="flex-start">
                 {filteredTasks.map(task => (
@@ -62,6 +61,7 @@ function MainContent({ tasks, addTasks, editTask }) {
                 )
                 )}
             </List>
+
             <Filter filterButtons={filterButtons} setFilterButtons={setFilterButtons} />
             <DropShadow />
         </div>

@@ -5,35 +5,30 @@ import Tag from '../Tag/Tag';
 import List from '../List/List';
 import ListItem from '../List/ListItem/ListItem';
 import Button from '../Button/Button';
-import { useState } from 'react';
-import { initialTasks, categories } from './Main.data';
+import { useContext } from 'react';
+import { categories } from './Main.data';
+import { TaskContext } from '../../context/Tasks/TaskContext';
 
 function Main() {
-    const [tasks, setTasks] = useState(initialTasks);
+    const { updateQueryParams } = useContext(TaskContext);
 
-    const addTask = (newTask) => {
-        setTasks([
-            ...tasks, {
-                ...newTask,
-                isCompleted: false,
-                id: Math.max(...tasks.map((task) => task.id)) + 1,
-            }])
-    }
-console.log(tasks)
+    const setFilter = (category) => {
+        updateQueryParams({ category });
+    };
 
     return <main className="main">
         <Sidebar name="Categories">
             <List gap={10} direction="column">
                 {categories.map(category => (
                     <ListItem key={category}>
-                        <Button variant='ghost'>
+                        <Button variant='ghost' onClick={() => setFilter(category)}>
                             <Tag status={category} size='l'></Tag>
                         </Button>
                     </ListItem>
                 ))}
             </List>
         </Sidebar>
-        <MainContent tasks={tasks} addTasks={addTask} editTask={setTasks} />
+        <MainContent />
     </main>
 }
 
