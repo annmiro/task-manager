@@ -7,6 +7,7 @@ import Task from "../Task/Task";
 import ListItem from "../List/ListItem/ListItem";
 import DropShadow from "../DropShadow/DropShadow";
 import { TaskContext } from "../../context/Tasks/TaskContext";
+import EmptyText from "../EmptyText/EmptyText";
 
 const buttonList = [
     {
@@ -49,19 +50,20 @@ function MainContent() {
         <Info taskCount={filteredTasks.length} />
 
         <div className="list-item-wrapper">
-            <List direction="column" fluid justify="flex-start">
-                {filteredTasks.map(task => (
-                    <ListItem key={task.id}>
-                        <Task checked={task.isCompleted}
-                            description={task.description}
-                            categoryName={task.category}
-                            changeTaskDescription={(value) => changeTaskDescription(task.id, value)}
-                            toggleTaskStatus={(value) => toggleTaskStatus(task.id, value)} />
-                    </ListItem>
-                )
-                )}
-            </List>
-
+            {filteredTasks.length !== 0 ?
+                <List direction="column" fluid justify="flex-start">
+                    {filteredTasks.map(task => (
+                        <ListItem key={task.id}>
+                            <Task checked={task.isCompleted}
+                                description={task.description}
+                                categoryName={task.category}
+                                changeTaskDescription={(value) => changeTaskDescription(task.id, value)}
+                                toggleTaskStatus={(value) => toggleTaskStatus(task.id, value)} />
+                        </ListItem>
+                    )
+                    )}
+                </List> :
+                <EmptyText />}
             <Filter filterButtons={filterButtons} setFilterButtons={setFilterButtons} />
             <DropShadow />
         </div>
